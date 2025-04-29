@@ -1,0 +1,17 @@
+name: Testing secrets
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Echo environment variable
+        env:
+          ASDF: ${{ secrets.asdf }}
+        run: echo "This is a manual run - $ASDF"
