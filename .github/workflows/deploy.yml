@@ -14,4 +14,6 @@ jobs:
       - name: Echo environment variable
         env:
           ASDF: ${{ secrets.asdf }}
-        run: echo "This is a manual run - $ASDF"
+        run: |
+          echo "This is a manual run - $ASDF"
+          echo "Another echo line - still $ASDFASDF"
